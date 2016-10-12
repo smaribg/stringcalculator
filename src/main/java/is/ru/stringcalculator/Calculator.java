@@ -6,10 +6,13 @@ public class Calculator{
 		if(emptyString(text))
 			return 0;
 		else
-			return Integer.parseInt(text);
+			return toInt(text);
 	}
 
 	private static boolean emptyString(String text){
 		return (text == " ");
+	}
+	private static int toInt(String text){
+		return Integer.parseInt(text);
 	}
 }
