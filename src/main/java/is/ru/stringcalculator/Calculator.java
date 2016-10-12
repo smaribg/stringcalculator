@@ -6,6 +6,10 @@ public class Calculator{
 		if(emptyString(text)){
 			return 0;
 		}
+		else if (text.startsWith("//")){
+			validate(splitTextWithDelim(text));
+			return sum(splitTextWithDelim(text));
+		}
 		else if(text.contains(",") || text.contains("\n")){
 			validate(splitText(text));
 			return sum(splitText(text));
@@ -38,6 +42,14 @@ public class Calculator{
 
 	private static String[] splitText(String text){
 		return text.split("[, \\n]");
+	}
+
+	private static String[] splitTextWithDelim(String text){
+		String [] numbers = text.split("\n");
+		String delim = numbers[0].substring(2,numbers[0].length());
+		text = text.substring(numbers[0].length()+1,text.length());
+		text = text.replace(delim,",");
+		return splitText(text);
 	}
 
 	private static void validate(String number){

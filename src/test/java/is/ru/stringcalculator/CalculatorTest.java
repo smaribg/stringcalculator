@@ -63,4 +63,9 @@ public class CalculatorTest {
 	public void testNumbersOver1000(){
 		assertEquals(5,Calculator.add("5,5000"));
 	}
+
+	@Test
+	public void testNewDelimeter(){
+		assertEquals(3,Calculator.add("//;\n1;2"));
+	}
 }
