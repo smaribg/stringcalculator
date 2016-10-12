@@ -3,12 +3,13 @@ package is.ru.stringcalculator;
 public class Calculator{
 
 	public static int add(String text){
-		if(text == " "){
+		if(emptyString(text))
 			return 0;
-		}
-		else{
+		else
 			return -1;
-		}
 	}
 
+	private static boolean emptyString(String text){
+		return (text == " ");
+	}
 }
