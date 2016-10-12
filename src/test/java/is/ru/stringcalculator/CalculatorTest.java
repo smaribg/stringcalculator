@@ -58,4 +58,9 @@ public class CalculatorTest {
 		exception.expectMessage("Negatives not allowed: -1,-5,-7");
 		Calculator.add("-1,2,-5,4,-7");
 	}
+
+	@Test
+	public void testNumbersOver1000(){
+		assertEquals(5,Calculator.add("5,5000"));
+	}
 }

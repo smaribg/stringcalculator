@@ -21,6 +21,10 @@ public class Calculator{
 	}
 
 	private static int toInt(String text){
+		int n = Integer.parseInt(text);
+		if(n > 1000){
+			return 0;
+		}
 		return Integer.parseInt(text);
 	}
 
