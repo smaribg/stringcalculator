@@ -23,7 +23,11 @@ public class Calculator{
 	}
 
 	private static int sum(String[] numbers){
-		return toInt(numbers[0]) + toInt(numbers[1]);
+		int sum = 0;
+		for(String n : numbers){
+			sum += toInt(n);
+		}
+		return sum;
 	}
 
 	private static String[] splitText(String text){
