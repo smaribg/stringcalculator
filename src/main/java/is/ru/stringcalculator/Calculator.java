@@ -6,7 +6,7 @@ public class Calculator{
 		if(emptyString(text))
 			return 0;
 		else
-			return -1;
+			return Integer.parseInt(text);
 	}
 
 	private static boolean emptyString(String text){
