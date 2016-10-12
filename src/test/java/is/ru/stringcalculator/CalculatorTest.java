@@ -65,7 +65,17 @@ public class CalculatorTest {
 	}
 
 	@Test
-	public void testNewDelimeter(){
+	public void testNewDelimeterOneCharacter(){
 		assertEquals(3,Calculator.add("//;\n1;2"));
+	}
+
+	@Test
+	public void testNewDelimeterMultipleCharacters(){
+		assertEquals(3,Calculator.add("//qwerty\n1qwerty2"));
+	}
+
+	@Test
+	public void testNewDelimeterAndDefaultDelimeters(){
+		assertEquals(20,Calculator.add("//:\n5,2,4:4\n5"));
 	}
 }
