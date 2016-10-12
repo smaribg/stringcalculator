@@ -6,7 +6,7 @@ public class Calculator{
 		if(emptyString(text)){
 			return 0;
 		}
-		else if(text.contains(",")){
+		else if(text.contains(",") || text.contains("\n")){
 			return sum(splitText(text));
 		}
 		else{
@@ -31,7 +31,6 @@ public class Calculator{
 	}
 
 	private static String[] splitText(String text){
-		return text.split(",");
+		return text.split("[, \\n]");
 	}
-
 }
