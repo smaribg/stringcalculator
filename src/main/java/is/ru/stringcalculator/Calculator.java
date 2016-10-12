@@ -19,6 +19,9 @@ public class Calculator{
 	}
 
 	private static int toInt(String text){
+		if(Integer.parseInt(text) < 0){
+			throw new IllegalArgumentException("Negatives not allowed: " + Integer.parseInt(text));
+		}
 		return Integer.parseInt(text);
 	}
 
